@@ -1,5 +1,8 @@
 # PV247 projekt
 
+Live: https://brno-transport-advisor.vercel.app/
+
+### Popis projektu
 Představme si, že se nacházíme v roce 2012 a chci jezdit po Brně na kole, šalinou nebo autem. Naše appka bude na základě dopravních nehod doporučovat, který dopravní prostředek je vhodný pro zítřejší cestování.
 
 Jelikož si hrajeme na to, že je rok 2012, máme informaci o tom, jaké nehody se “zítra” stanou (zítra v roce 2012). Proto dokážeme říct, aby uživatel jel zítra autem, protože se třeba stanou 3 nehody cyklistů. Informace o nehodách poskytuje brněnské API.
@@ -15,7 +18,7 @@ Firebase kolekce:
 - UserLocation - userId, locationId
 - ReceantlySearchedTrip - id, from, to, searchedOn, pinned, userEmail
 
-Screens:
+Obrazovky:
 
 - `/` Úvodní stránka (Landing page)
 - `/auth/home` Home - Informace o včerešjím, dnšením a zítřejším dni
