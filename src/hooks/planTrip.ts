@@ -1,8 +1,8 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { deleteDoc, addDoc, updateDoc, getDocs } from 'firebase/firestore'
 import { useSession } from 'next-auth/react'
-import { Coord } from '../types'
-import { recentlySearchedTripsDocumentById, recentlySearchedTripsCollection } from '../utils/firebase'
+import { Coord } from 'types'
+import { recentlySearchedTripsDocumentById, recentlySearchedTripsCollection } from 'utils/firebase'
 
 type RecentlySearchedMutationArgs = {
   from: Coord & { name: string }

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { MapContext } from 'react-mapycz/lib/Map'
-import { setListener } from '../utils'
+import { setListener } from 'utils'
 
 type MapyczSelectedPlace = {
   data: {

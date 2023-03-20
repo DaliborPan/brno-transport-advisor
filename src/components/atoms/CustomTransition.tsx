@@ -6,7 +6,7 @@ type TransitionProps = PropsWithChildren<{
   afterLeave: () => void
 }>
 
-const CustomTransition: React.FC<TransitionProps> = ({ show, afterLeave, children }) => {
+export const CustomTransition: React.FC<TransitionProps> = ({ show, afterLeave, children }) => {
   return (
     <Transition
       show={show}
@@ -22,5 +22,3 @@ const CustomTransition: React.FC<TransitionProps> = ({ show, afterLeave, childre
     </Transition>
   )
 }
-
-export { CustomTransition }

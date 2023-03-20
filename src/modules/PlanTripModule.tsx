@@ -1,11 +1,11 @@
 import { Form, Formik } from 'formik'
 import { useRouter } from 'next/router'
-import { useMemo, useState, useCallback } from 'react'
+import { useMemo, useState } from 'react'
 import { Navigation } from 'react-feather'
-import { AccidentDetail, LabeledInput, MapToolbar, MapyczMap, RecentlySearchedCard } from '../components/molecules'
-import { RecentlySearchedSection } from '../components/organisms'
-import { END_AT_INPUT_ID, START_FROM_INPUT_ID, YEAR_OFFSET } from '../const'
-import { PlanTripPageProps } from '../types'
+import { AccidentDetail, LabeledInput, MapToolbar, MapyczMap } from 'components/molecules'
+import { RecentlySearchedSection } from 'components/organisms'
+import { END_AT_INPUT_ID, START_FROM_INPUT_ID, YEAR_OFFSET } from 'const'
+import { PlanTripPageProps } from 'types'
 
 const INITIAL_VALUES = {
   location: 'ALL',

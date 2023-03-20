@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
-import { BrnoBikeAccidentsResponse } from '../../types/api'
-import { Button } from '../atoms'
-import { AccidentDetail, CustomModal } from '../molecules'
+import { BrnoBikeAccidentsResponse } from 'types/api'
+import { Button } from 'components/atoms'
+import { AccidentDetail, CustomModal } from 'components/molecules'
 
 type AccidentDetailModalProps = {
   accident: BrnoBikeAccidentsResponse[0]['attributes']
@@ -9,7 +9,7 @@ type AccidentDetailModalProps = {
   closeModal: () => void
 }
 
-const AccidentDetailModal: React.FC<AccidentDetailModalProps> = ({ accident, isOpen, closeModal }) => {
+const AccidentDetailModal = ({ accident, isOpen, closeModal }: AccidentDetailModalProps) => {
   return (
     <CustomModal
       isOpen={isOpen}
@@ -26,10 +26,12 @@ const AccidentDetailModal: React.FC<AccidentDetailModalProps> = ({ accident, isO
   )
 }
 
-export const WithAccidentModal: React.FC<{
+type WithAccidentModalProps = {
   accident: BrnoBikeAccidentsResponse[0]['attributes']
   children: (onModalOpen: () => void) => React.ReactNode
-}> = ({ children, accident }) => {
+}
+
+export const WithAccidentModal = ({ children, accident }: WithAccidentModalProps) => {
   const [isAccidentOpened, setIsAccidentOpened] = useState(false)
 
   const onModalOpen = useCallback(() => setIsAccidentOpened(true), [])

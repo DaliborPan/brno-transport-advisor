@@ -4,8 +4,8 @@ import { Map, MouseControl, SyncControl, ZoomControl } from 'react-mapycz'
 import { END_AT_INPUT_ID, START_FROM_INPUT_ID } from '../../const'
 import { useMapLoaderScript, useSetupSuggestListeners } from '../../hooks/mapycz'
 import { useCreateRecentlySearched, useRecentlySearched } from '../../hooks/planTrip'
-import { Coord, PlanTripPageProps } from '../../types'
-import { MapDynamicPath, MapMarkers } from '../atoms'
+import { Coord, PlanTripPageProps } from 'types'
+import { MapDynamicPath, MapMarkers } from 'components/atoms'
 
 type CoordWithName = Coord & { name: string }
 
@@ -24,8 +24,6 @@ const useSubmitRecentlySearched = (from?: CoordWithName, to?: CoordWithName) => 
         },
         {
           onSuccess: () => {
-            console.log('Sucessfully submitted recentlySearched')
-            // TODO: invalidate query instead of refetching
             refetch()
           }
         }
@@ -73,11 +71,7 @@ const MapyczMap: React.FC<MapyczMapProps> = ({ locationAccidents, onMarkerClick 
 
       {from && to && <MapDynamicPath criterion="fast" coords={[from, to]} />}
 
-      <MapMarkers
-        // TODO: replace with accident markers
-        coords={coords}
-        onMarkerClick={onMarkerClick}
-      />
+      <MapMarkers coords={coords} onMarkerClick={onMarkerClick} />
     </Map>
   )
 }

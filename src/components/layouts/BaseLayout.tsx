@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react'
 import Image from 'next/image'
-import LOGO from '../../../public/BBT_logo-b.png'
 import { signOut, useSession } from 'next-auth/react'
-import { NavLink } from '../atoms/NavLink'
+import { NavLink } from 'components/atoms/NavLink'
 import Link from 'next/link'
+import LOGO from '/public/BBT_logo-b.png'
 
 const getUserInitials = (userName: string): string => {
   var userNameSplit = userName.split(' ')
