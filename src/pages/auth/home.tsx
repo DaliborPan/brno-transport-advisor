@@ -1,9 +1,9 @@
 import { GetStaticProps, NextPage } from 'next'
 import { useEffect } from 'react'
-import { BaseLayout } from '../../components/layouts'
-import { getHomeData } from '../../hooks/weather'
-import { HomeModule } from '../../modules'
-import { HomePageProps } from '../../types'
+import { BaseLayout } from 'components/layouts'
+import { getHomeData } from 'hooks/weather'
+import { HomeModule } from 'modules'
+import { HomePageProps } from 'types'
 
 // TODO: useEffect that checks if needing revalidate (current rendered day stored in firestore)
 const HomePage: NextPage<HomePageProps> = (props) => {

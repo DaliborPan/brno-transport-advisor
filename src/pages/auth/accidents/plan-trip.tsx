@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from 'next'
-import { BaseLayout } from '../../../components/layouts'
-import { getBrnoBikeAccidents } from '../../../hooks/accidents'
-import { getAllLocations } from '../../../hooks/location'
-import { PlanTripModule } from '../../../modules'
-import { PlanTripPageProps } from '../../../types'
-import { getAccidentsInLocations } from '../../../utils'
+import { BaseLayout } from 'components/layouts'
+import { getBrnoBikeAccidents } from 'hooks/accidents'
+import { getAllLocations } from 'hooks/location'
+import { PlanTripModule } from 'modules'
+import { PlanTripPageProps } from 'types'
+import { getAccidentsInLocations } from 'utils'
 
 const PlanTripPage: NextPage<PlanTripPageProps> = (props) => (
   <BaseLayout>

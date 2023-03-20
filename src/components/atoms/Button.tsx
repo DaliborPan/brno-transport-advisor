@@ -4,12 +4,10 @@ type ButtonProps = {
   onClick: () => any
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, label, extraClasses }) => {
+export const Button: React.FC<ButtonProps> = ({ onClick, label, extraClasses }) => {
   return (
     <button className={`btn ${extraClasses}`} onClick={onClick}>
       {label}
     </button>
   )
 }
-
-export { Button }

@@ -2,12 +2,12 @@ import { useFormikContext } from 'formik'
 import moment from 'moment'
 import { useMemo, memo } from 'react'
 import { Calendar, Search } from 'react-feather'
-import { YEAR_OFFSET } from '../../const'
-import { useTemperature } from '../../hooks/weather'
-import { BrnoBikeAccidentsResponse, WeatherTemperatureResponse } from '../../types/api'
-import { getWeeks } from '../../utils'
-import { Button, BaseSelect, BaseIconInput } from '../atoms'
-import { WithAccidentModal } from './WithAccidentModal'
+import { YEAR_OFFSET } from 'const'
+import { useTemperature } from 'hooks/weather'
+import { BrnoBikeAccidentsResponse, WeatherTemperatureResponse } from 'types/api'
+import { getWeeks } from 'utils'
+import { Button, BaseSelect, BaseIconInput } from 'components/atoms'
+import { WithAccidentModal } from 'components/organisms'
 
 type TableToolbarProps = TableProps & { week: number | null; setFieldValue: (fieldName: string, value: any) => void }
 
@@ -52,7 +52,7 @@ const getForecast = (temperature: number | string, accidentsCount: number) => {
   return `It's not going to be cold, but ${accidentsCount} accidents are expected. Be carefoul! 🙏`
 }
 
-const TableRow: React.FC<TableDay> = ({ date, accidents }) => {
+const TableRow = ({ date, accidents }: TableDay) => {
   const { data: temp } = useTemperature()
   const temperature = getTemperatrue(date, temp)
 
@@ -142,7 +142,7 @@ export const TableToolbar = memo(({ accidents, week, setFieldValue }: TableToolb
   </div>
 ))
 
-export const Table: React.FC<TableProps> = ({ accidents }) => {
+export const Table = ({ accidents }: TableProps) => {
   const {
     values: { day, week }
   } = useFormikContext<InitialValuesType>()

@@ -1,8 +1,8 @@
 import { GetStaticProps, NextPage } from 'next'
-import { BaseLayout } from '../../components/layouts'
-import { getAllLocations } from '../../hooks/location'
-import { ProfileModule } from '../../modules'
-import { Location } from '../../utils/firebase'
+import { BaseLayout } from 'components/layouts'
+import { getAllLocations } from 'hooks/location'
+import { ProfileModule } from 'modules'
+import { Location } from 'utils/firebase'
 
 const ProfilePage: NextPage<{ definedLocations: Location[] }> = (props) => (
   <BaseLayout>

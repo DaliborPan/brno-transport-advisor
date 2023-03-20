@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { YEAR_OFFSET } from '../const'
+import { YEAR_OFFSET } from 'const'
 import { BrnoBikeAccidentsResponse, WeatherPrecipitationResponse, WeatherTemperatureResponse } from '../types/api'
-import { getBrnoBikeAccidents } from './accidents'
+import { getBrnoBikeAccidents } from 'hooks/accidents'
 
 const WEATHER_PRECIPITATION_API_BASE = process.env.NEXT_PUBLIC_WEATHER_API_BASE
 const WEATHER_TEMPERATURE_API_BASE = process.env.NEXT_PUBLIC_WEATHER_TEMPERATURE_API_BASE

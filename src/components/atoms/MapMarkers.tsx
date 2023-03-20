@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useMap } from '../../hooks/mapycz'
-import { Coord } from '../../types'
-import { setListener } from '../../utils'
+import { useMap } from 'hooks/mapycz'
+import { Coord } from 'types'
+import { setListener } from 'utils'
 
 const useWaitForMarkerLayer = () => {
   const map = useMap()

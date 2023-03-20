@@ -4,8 +4,8 @@ import { Map, MouseControl, SyncControl, ZoomControl } from 'react-mapycz'
 import { END_AT_INPUT_ID, START_FROM_INPUT_ID } from '../../const'
 import { useMapLoaderScript, useSetupSuggestListeners } from '../../hooks/mapycz'
 import { useCreateRecentlySearched, useRecentlySearched } from '../../hooks/planTrip'
-import { Coord, PlanTripPageProps } from '../../types'
-import { MapDynamicPath, MapMarkers } from '../atoms'
+import { Coord, PlanTripPageProps } from 'types'
+import { MapDynamicPath, MapMarkers } from 'components/atoms'
 
 type CoordWithName = Coord & { name: string }
 

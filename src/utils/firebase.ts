@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { collection, doc, CollectionReference, DocumentReference, getFirestore } from 'firebase/firestore'
-import { Coord } from '../types'
+import { Coord } from 'types'
 
 // Initialize Firebase
 initializeApp({

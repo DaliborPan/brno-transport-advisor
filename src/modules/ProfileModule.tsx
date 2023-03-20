@@ -1,28 +1,25 @@
-import CITY from '../../public/city4.jpeg'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
-import { useAddUserLocation, useRemoveUserLocation, useUserLocations } from '../hooks/location'
-import { useCallback } from 'react'
-import { LocationCard } from '../components/molecules'
-import { Tag } from 'react-feather'
-import { BaseIconInput, BaseSelect, Button } from '../components/atoms'
-import { Location } from '../utils/firebase'
-import { RecentlySearchedSection } from '../components/organisms'
 import { Formik } from 'formik'
+import { useCallback } from 'react'
+import { Tag } from 'react-feather'
+import { BaseIconInput, BaseSelect, Button } from 'components/atoms'
+import { Location } from 'utils/firebase'
+import { RecentlySearchedSection } from 'components/organisms'
+import { useAddUserLocation, useRemoveUserLocation, useUserLocations } from 'hooks/location'
+import { LocationCard } from 'components/molecules'
+import CITY from '/public/city4.jpeg'
 
 type AddLocationFormProps = {
   locations: Location[]
 }
 
-const INITIAL_VALUES: {
-  location: string
-  note: string
-} = {
+const INITIAL_VALUES = {
   location: '',
   note: ''
 }
 
-const AddLocationForm: React.FC<AddLocationFormProps> = ({ locations }) => {
+const AddLocationForm = ({ locations }: AddLocationFormProps) => {
   const { data: session } = useSession()
   const { mutate: addUserLocation } = useAddUserLocation()
   const { refetch } = useUserLocations()
@@ -111,7 +108,7 @@ const UserPreferredLocations = () => {
   )
 }
 
-const ProfileModule: React.FC<{ definedLocations: Location[] }> = ({ definedLocations }) => {
+export const ProfileModule = ({ definedLocations }: { definedLocations: Location[] }) => {
   const { data: session } = useSession()
 
   return (
@@ -156,5 +153,3 @@ const ProfileModule: React.FC<{ definedLocations: Location[] }> = ({ definedLoca
     </div>
   )
 }
-
-export { ProfileModule }

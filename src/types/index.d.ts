@@ -1,6 +1,6 @@
 import { Session } from 'next-auth'
-import { Location } from '../utils/firebase'
-import { BrnoBikeAccidentsResponse } from './api'
+import { Location } from 'utils/firebase'
+import { BrnoBikeAccidentsResponse } from 'types/api'
 
 declare global {
   interface Window {

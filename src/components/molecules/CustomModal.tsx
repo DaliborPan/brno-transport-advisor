@@ -32,7 +32,7 @@ const MODAL_TRANSITION_PROPS = {
   leaveTo: 'opacity-0 scale-95'
 }
 
-export const CustomModal: React.FC<CustomModalProps> = ({ isOpen, closeModal, body, action }) => {
+export const CustomModal = ({ isOpen, closeModal, body, action }: CustomModalProps) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>

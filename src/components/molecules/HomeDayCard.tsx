@@ -2,15 +2,15 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import { Sun, Umbrella } from 'react-feather'
 
-import { Button } from '../atoms'
-import { WithAccidentModal } from '../organisms'
+import { Button } from 'components/atoms'
+import { WithAccidentModal } from 'components/organisms'
 
-import { HomeModuleDayProps } from '../../types'
-import { EXAMPLE_BRNO_BIKE_ACCIDENT_RESPONSE } from '../../const/api'
+import { HomeModuleDayProps } from 'types'
+import { EXAMPLE_BRNO_BIKE_ACCIDENT_RESPONSE } from 'const/api'
 
-import BIKE from '../../../public/home-images/bicycle.png'
-import BUS from '../../../public/home-images/bus.png'
-import CAR from '../../../public/home-images/car.png'
+import BIKE from '/public/home-images/bicycle.png'
+import BUS from '/public/home-images/bus.png'
+import CAR from '/public/home-images/car.png'
 
 type CardProps = HomeModuleDayProps & {
   title?: string
@@ -25,7 +25,7 @@ const getImage = (temperature: number | string, precipitaion: number | string, a
   return BIKE
 }
 
-const Card: React.FC<CardProps> = ({ temperature, precipitation, title, accidents }) => {
+const Card = ({ temperature, precipitation, title, accidents }: CardProps) => {
   const smaller = !!title
   const hasAccidents = accidents.length !== 0
   const imageSrc = getImage(temperature, precipitation, accidents.length)
@@ -88,13 +88,12 @@ const Card: React.FC<CardProps> = ({ temperature, precipitation, title, accident
   )
 }
 
-const HomeDayCard: React.FC<CardProps> = (props) => {
-  const { title } = props
+export const HomeDayCard = (props: CardProps) => {
   return (
     <>
-      {title ? (
+      {props.title ? (
         <div className="w-1/3 flex flex-col">
-          <h1 className="text-2xl text-center pb-8 text-blue-800 grow grid place-items-center">{title}</h1>
+          <h1 className="text-2xl text-center pb-8 text-blue-800 grow grid place-items-center">{props.title}</h1>
           <Card {...props} accidents={props.accidents} />
         </div>
       ) : (
@@ -103,5 +102,3 @@ const HomeDayCard: React.FC<CardProps> = (props) => {
     </>
   )
 }
-
-export { HomeDayCard }

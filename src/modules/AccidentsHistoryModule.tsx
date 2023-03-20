@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react'
-import { BrnoBikeAccidentsResponse } from '../types/api'
+import { BrnoBikeAccidentsResponse } from 'types/api'
 
-import { CustomTransition } from '../components/atoms'
-import { filterAccidents } from '../utils'
-import { AccidentCard, Table, TableToolbar } from '../components/organisms'
+import { CustomTransition } from 'components/atoms'
+import { filterAccidents } from 'utils'
+import { AccidentCard, Table, TableToolbar } from 'components/organisms'
 import { Formik, useFormikContext } from 'formik'
 
 type Props = {
