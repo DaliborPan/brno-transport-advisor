@@ -1,12 +1,13 @@
 import { GetStaticProps, NextPage } from 'next'
+import { BaseLayout } from '../../../components/layouts'
 import { getBrnoBikeAccidents } from '../../../hooks/accidents'
-import { AccidentsHistoryModule, ProtectedModule } from '../../../modules'
+import { AccidentsHistoryModule } from '../../../modules'
 import { BrnoBikeAccidentsResponse } from '../../../types/api'
 
 const AccidentsHistoryPage: NextPage<{ data: BrnoBikeAccidentsResponse }> = ({ data }) => (
-  <ProtectedModule>
+  <BaseLayout>
     <AccidentsHistoryModule data={data} />
-  </ProtectedModule>
+  </BaseLayout>
 )
 
 export const getStaticProps: GetStaticProps = async () => {

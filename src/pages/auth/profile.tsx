@@ -1,12 +1,13 @@
 import { GetStaticProps, NextPage } from 'next'
+import { BaseLayout } from '../../components/layouts'
 import { getAllLocations } from '../../hooks/location'
-import { ProfileModule, ProtectedModule } from '../../modules'
+import { ProfileModule } from '../../modules'
 import { Location } from '../../utils/firebase'
 
 const ProfilePage: NextPage<{ definedLocations: Location[] }> = (props) => (
-  <ProtectedModule>
+  <BaseLayout>
     <ProfileModule {...props} />
-  </ProtectedModule>
+  </BaseLayout>
 )
 
 export const getStaticProps: GetStaticProps = async (props) => {

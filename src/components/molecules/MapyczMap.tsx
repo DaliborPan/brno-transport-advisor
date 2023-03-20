@@ -24,8 +24,6 @@ const useSubmitRecentlySearched = (from?: CoordWithName, to?: CoordWithName) => 
         },
         {
           onSuccess: () => {
-            console.log('Sucessfully submitted recentlySearched')
-            // TODO: invalidate query instead of refetching
             refetch()
           }
         }
@@ -73,11 +71,7 @@ const MapyczMap: React.FC<MapyczMapProps> = ({ locationAccidents, onMarkerClick 
 
       {from && to && <MapDynamicPath criterion="fast" coords={[from, to]} />}
 
-      <MapMarkers
-        // TODO: replace with accident markers
-        coords={coords}
-        onMarkerClick={onMarkerClick}
-      />
+      <MapMarkers coords={coords} onMarkerClick={onMarkerClick} />
     </Map>
   )
 }
