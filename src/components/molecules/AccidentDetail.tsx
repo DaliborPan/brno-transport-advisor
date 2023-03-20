@@ -1,13 +1,13 @@
 import clsx from 'clsx'
-import { BrnoBikeAccidentsResponse } from '../../types/api'
-import { Button } from '../atoms'
+import { BrnoBikeAccidentsResponse } from 'types/api'
+import { Button } from 'components/atoms'
 
 type AccidentDetailLineProps = {
   title: string
   value: string
 }
 
-const AccidentDetailLine: React.FC<AccidentDetailLineProps> = ({ title, value }) => {
+const AccidentDetailLine = ({ title, value }: AccidentDetailLineProps) => {
   return (
     <div className="flex items-center space-x-4 justify-between">
       <h3 className="text-lg text-black/50 whitespace-nowrap">{title}: </h3>
@@ -22,7 +22,7 @@ type AccidentDetailProps = {
   extraWrapperClasses?: string
 }
 
-export const AccidentDetail: React.FC<AccidentDetailProps> = ({ accident, onClose, extraWrapperClasses = '' }) => {
+export const AccidentDetail = ({ accident, onClose, extraWrapperClasses = '' }: AccidentDetailProps) => {
   const date = new Date(0)
   date.setMilliseconds(accident.datum)
 

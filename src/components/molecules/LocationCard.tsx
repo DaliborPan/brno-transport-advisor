@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import clsx from 'clsx'
-import { Bookmark, X } from 'react-feather'
-import { UserLocation } from '../../utils/firebase'
+import { X } from 'react-feather'
+import { UserLocation } from 'utils/firebase'
 
-import CITY from '../../../public/city4.jpeg'
+import CITY from '/public/city4.jpeg'
 
 type LocationCardProps = UserLocation & {
   onRemove: (id: string) => void
@@ -11,7 +11,7 @@ type LocationCardProps = UserLocation & {
   pinned?: boolean
 }
 
-export const LocationCard: React.FC<LocationCardProps> = ({ onRemove, pinned = false, onPin, location, note }) => {
+export const LocationCard = ({ onRemove, pinned = false, onPin, location, note }: LocationCardProps) => {
   return (
     <div className="shadow-md border border-lighterblue py-3 px-10 rounded-lg flex justify-between relative">
       <div className="flex space-x-4">

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { PathProps } from 'react-mapycz'
-import { useMap } from '../../hooks/mapycz'
+import { useMap } from 'hooks/mapycz'
 
 const useGeometryLayer = (coords: PathProps['coords']) => {
   const map = useMap()

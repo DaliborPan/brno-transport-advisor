@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import { Calendar, ArrowRight } from 'react-feather'
-import { BrnoBikeAccidentsResponse } from '../../types/api'
-import { WithAccidentModal } from './WithAccidentModal'
+import { BrnoBikeAccidentsResponse } from 'types/api'
+import { WithAccidentModal } from 'components/organisms'
 import DUMMY_BIKE from '/public/Blue-bike.svg'
 
 type AccidentCardProps = {
   accident: BrnoBikeAccidentsResponse[0]
 }
 
-export const AccidentCard: React.FC<AccidentCardProps> = ({ accident: { attributes } }) => {
+export const AccidentCard = ({ accident: { attributes } }: AccidentCardProps) => {
   const accidentDate = new Date(0)
   accidentDate.setMilliseconds(attributes.datum)
 

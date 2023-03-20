@@ -1,4 +1,18 @@
-import { Stat, StatProps } from './index'
+type StatProps = {
+  title: string
+  value: number
+  desc: string
+}
+
+const Stat = ({ title, value, desc }: StatProps) => {
+  return (
+    <div className="stat">
+      <div className="stat-title">{title}</div>
+      <div className="stat-value">{value}</div>
+      <div className="stat-desc">{desc}</div>
+    </div>
+  )
+}
 
 type HeroStatsProps = {
   thisMonth: StatProps
@@ -6,7 +20,7 @@ type HeroStatsProps = {
   allTime: StatProps
 }
 
-const HeroStats: React.FC<HeroStatsProps> = ({ thisMonth, thisYear, allTime }) => {
+export const HeroStats = ({ thisMonth, thisYear, allTime }: HeroStatsProps) => {
   return (
     <div className="stats stats-vertical lg:stats-horizontal shadow">
       <Stat {...thisMonth} />
@@ -15,5 +29,3 @@ const HeroStats: React.FC<HeroStatsProps> = ({ thisMonth, thisYear, allTime }) =
     </div>
   )
 }
-
-export { HeroStats }

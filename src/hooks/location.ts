@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { locationsCollection, userLocationsCollection, userLocationsDocumentById } from '../utils/firebase'
+import { locationsCollection, userLocationsCollection, userLocationsDocumentById } from 'utils/firebase'
 import { getDocs, addDoc, deleteDoc, updateDoc } from '@firebase/firestore'
 import { useSession } from 'next-auth/react'
 

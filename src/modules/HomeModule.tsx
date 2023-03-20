@@ -1,9 +1,8 @@
 import moment from 'moment'
-import { useState } from 'react'
 import { Calendar } from 'react-feather'
-import { HomeDayCard } from '../components/molecules'
-import { EXAMPLE_BRNO_BIKE_ACCIDENT_RESPONSE } from '../const/api'
-import { HomePageProps } from '../types'
+import { HomeDayCard } from 'components/molecules'
+import { EXAMPLE_BRNO_BIKE_ACCIDENT_RESPONSE } from 'const/api'
+import { HomePageProps } from 'types'
 
 const HomeModule: React.FC<HomePageProps> = ({ yesterday, today, tomorrow }) => {
   return (

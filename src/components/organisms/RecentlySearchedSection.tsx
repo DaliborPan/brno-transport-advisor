@@ -1,15 +1,15 @@
 import clsx from 'clsx'
 import { useSession } from 'next-auth/react'
 import { useState, useCallback } from 'react'
-import { useRecentlySearched, useUpdateRecentlySearchedPinned } from '../../hooks/planTrip'
-import { Coord } from '../../types'
-import { RecentlySearchedCard } from '../molecules'
+import { useRecentlySearched, useUpdateRecentlySearchedPinned } from 'hooks/planTrip'
+import { Coord } from 'types'
+import { RecentlySearchedCard } from 'components/molecules'
 
 type RecentlySearchedSectionProps = {
   extraWrapperClasses?: string
 }
 
-export const RecentlySearchedSection: React.FC<RecentlySearchedSectionProps> = ({ extraWrapperClasses = '' }) => {
+export const RecentlySearchedSection = ({ extraWrapperClasses = '' }: RecentlySearchedSectionProps) => {
   const { data: session } = useSession()
   const { data: recentlySearchedTrips, refetch } = useRecentlySearched()
   const [limit, setLimit] = useState<number | null>(4)

@@ -1,5 +1,5 @@
 import { signIn } from 'next-auth/react'
-import { Button } from '../atoms'
+import { Button } from 'components/atoms'
 
 type HeroCardProps = {
   header: string
@@ -7,7 +7,7 @@ type HeroCardProps = {
   secondParagraph: string
 }
 
-const HeroCard: React.FC<HeroCardProps> = ({ header, firstParagraph, secondParagraph }) => {
+export const HeroCard = ({ header, firstParagraph, secondParagraph }: HeroCardProps) => {
   return (
     <div className="card card-compact max-w-[384px] bg-base-100 shadow-xl">
       <figure>
@@ -28,5 +28,3 @@ const HeroCard: React.FC<HeroCardProps> = ({ header, firstParagraph, secondParag
     </div>
   )
 }
-
-export { HeroCard }

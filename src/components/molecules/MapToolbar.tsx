@@ -1,10 +1,10 @@
 import { useFormikContext } from 'formik'
 import { useMemo } from 'react'
 
-import { YEARS } from '../../const'
-import { useUserLocations } from '../../hooks/location'
-import { Location } from '../../utils/firebase'
-import { BaseSelect } from '../atoms'
+import { YEARS } from 'const'
+import { useUserLocations } from 'hooks/location'
+import { Location } from 'utils/firebase'
+import { BaseSelect } from 'components/atoms'
 
 type MapToolbarProps = {
   allLocations: Location[]

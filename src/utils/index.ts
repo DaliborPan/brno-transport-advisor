@@ -1,5 +1,5 @@
-import { BrnoBikeAccidentsResponse } from '../types/api'
-import { Location } from './firebase'
+import { BrnoBikeAccidentsResponse } from 'types/api'
+import { Location } from 'utils/firebase'
 
 export const setListener = (isReady: () => any, onReady: () => void) => {
   const readyListener = (): NodeJS.Timeout | undefined => {

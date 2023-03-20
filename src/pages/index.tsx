@@ -1,11 +1,12 @@
+import { HeroStats } from 'components/atoms'
 import { GetStaticProps, NextPage } from 'next'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { Button } from '../components/atoms'
-import { HeroCard, HeroStats } from '../components/molecules'
-import { YEAR_OFFSET } from '../const'
-import { getBrnoBikeAccidents } from '../hooks/accidents'
+import { Button } from 'components/atoms'
+import { HeroCard } from 'components/molecules'
+import { YEAR_OFFSET } from 'const'
+import { getBrnoBikeAccidents } from 'hooks/accidents'
 
 type LandingPageProps = {
   accidentsThisMonth: number
